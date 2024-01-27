@@ -8,9 +8,9 @@ void print_diagonal(int n)
 {
 	int x = 0, z;
 
-    if (n > 0)
+	if (n > 0)
 	{
-	    while (x < n)
+		while (x < n)
 		{
 			z = 0;
 			while (z < x)
