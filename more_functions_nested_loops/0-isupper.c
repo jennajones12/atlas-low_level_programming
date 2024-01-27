@@ -1,18 +1,17 @@
-#include "main.h"
 #include <stdio.h>
 
-/**
- * main - check the code.
- *
- * Return: Always 0.
- */
-int main(void)
+void check(char ch)
 {
-    char c;
-
-    c = 'A';
-    printf("%c: %d\n", c, _isupper(c));
-    c = 'a';
-    printf("%c: %d\n", c, _isupper(c));
-    return (0);
+ 
+    if (ch >= 'A' && ch <= 'Z')
+        printf("\n%c is an UpperCase character",
+               ch);
+ 
+    else if (ch >= 'a' && ch <= 'z')
+        printf("\n%c is an LowerCase character",
+               ch);
+ 
+    else
+        printf("\n%c is not an alphabetic character",
+               ch);
 }
