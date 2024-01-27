@@ -1,17 +1,20 @@
-#include <stdio.h>
+#include "main.h"
 
-void check(char ch)
+/**
+ * _islower - checks for uppercase character.
+ * @c: The character to be checked.
+ *
+ * Return: 1 if c is uppercase, 0 otherwise.
+ */
+int _isupper(int c)
 {
- 
+
     if (ch >= 'A' && ch <= 'Z')
-        printf("\n%c is an UpperCase character",
-               ch);
- 
-    else if (ch >= 'a' && ch <= 'z')
-        printf("\n%c is an LowerCase character",
-               ch);
- 
+    {
+	    	return (1);
+    }
     else
-        printf("\n%c is not an alphabetic character",
-               ch);
+        {
+		return (0);
+	}
 }
