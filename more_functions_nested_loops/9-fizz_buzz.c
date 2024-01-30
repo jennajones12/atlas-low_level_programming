@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print 1 to 100, if divisible by 3 fizz, if 5 buzz, if 15 fizzbuzz
+ * main - print 1 to 100, if divisible by 3 fizz, if 5 buzz, if 15 fizzbuzz
  *
  * Return: 0
  */
