@@ -4,16 +4,29 @@
  * @size: triangle size
  * Return: none
  */
-void print_triangle(int size) 
+void print_triangle(int size)
 {
-    if (size <= 0) {
-        putchar('\n');
-    } else {
-        for (int i = 1; i <= size; i++) {
-            for (int j = 0; j < i; j++) {
-                putchar('#');
-            }
-            putchar('\n');
-        }
-    }
+	int i, j;
+
+	if (size > 0)
+	{
+		for (i = 1; i <= size; i++)
+		{
+			for (j = 1; j <= size; j++)
+			{
+				if (j <= size - i)
+					_putchar(' ');
+				else
+				{
+					if (j == size)
+						_putchar('#');
+					else
+						_putchar('#');
+				}
+			}
+			_putchar('\n');
+		}
+	}
+	else
+		_putchar('\n');
 }
