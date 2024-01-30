@@ -1,33 +1,47 @@
 #include "main.h"
+
 /**
- * _atoi - function that converts string to integer
- * @s: input string
- * Return: an integer
+ * is_numerical - check if it is a digit
+ * @n: Number
+ * Return: If is a number, return 1 else return 0
+ */
+int is_numerical(unsigned int n)
+{
+return (n >= '0' &&  n <= '9');
+}
+
+/**
+ * _atoi - convert a string to an integer
+ *@s: String
+ * Return: Return the num
  */
 int _atoi(char *s)
 {
-	int sign = 1;
-	unsigned int total = 0;
-	char null_flag = 0;
+unsigned int number, i;
+int sign;
 
-	while (*s)
-	{
-		if (*s == '-')
-			sign *= -1;
+sign = 1;
+number = 0;
 
-		if (*s >= '0' && *s <= '9')
-		{
-			null_flag = 1;
-			total = total * 10 + *s - '0';
-		}
 
-		else if (null_flag)
-			break;
-		s++;
-	}
 
-	if (sign < 0)
-		total = (-total);
+for (i = 0; s[i] != '\0'; i++)
+{
+if (is_numerical(s[i]))
+{
+number = (s[i] - 48) + number * 10;
 
-	return (total);
+if (s[i + 1] == ' ')
+break;
+}
+else if (s[i] == '-')
+{
+sign *= -1;
+}
+
+}
+
+return (number *sign);
+
+
 }
