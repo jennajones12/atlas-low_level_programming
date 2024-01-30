@@ -1,6 +1,11 @@
-#include <stdio.h>
-
-void print_triangle(int size) {
+#include "main.h"
+/**
+ * print_triangle - prints a triangle
+ * @size: triangle size
+ * Return: none
+ */
+void print_triangle(int size) 
+{
     if (size <= 0) {
         putchar('\n');
     } else {
