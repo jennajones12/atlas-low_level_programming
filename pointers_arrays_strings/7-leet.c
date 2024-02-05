@@ -5,12 +5,13 @@
  * Return: String that is encoded
  */
 char *leet(char *str)
-{ if (str == NULL)
+{
+char *result = str;
+	
+if (str == NULL)
 {
 return NULL;
 }
-
-char* result = str;
 
 while (*str)
 {
