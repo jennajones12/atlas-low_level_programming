@@ -15,11 +15,11 @@ char *leet(char *n)
 
 	{
 		int j = 0;
-		
+
 	while (j < 10)
 
 		{
-	if (n[i] == leetMap[j])
+			if (n[i] == leetMap[j])
 			{
 				 n[i] = leetReplace[j];
 	break;
