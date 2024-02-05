@@ -10,19 +10,23 @@ char *leet(char *n)
 	char leetReplace[] = {'4', '4', '3', '3', '0', '0', '7', '7', '1', '1'};
 
 	int i = 0;
+
 	while (n[i] != '\0')
+
 	{
 		int j = 0;
+
 		while (j < 10)
+
 		{
-			if (n[i] == leetMap[j])
+	if (n[i] == leetMap[j])
 			{
 				 n[i] = leetReplace[j];
-				 break;
+	break;
 			}
 			j++;
 		}
 		i++;
 	}
-	return n;
+	return (n);
 }
