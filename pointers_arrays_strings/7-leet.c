@@ -15,8 +15,8 @@ char *leet(char *n)
 
 	{
 		int j = 0;
-
-		while (j < 10)
+		
+	while (j < 10)
 
 		{
 	if (n[i] == leetMap[j])
