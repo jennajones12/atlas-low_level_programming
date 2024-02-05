@@ -1,7 +1,13 @@
-#include <main.h>
+#include "main.h"
+/**
+ * _strcat - concat string
+ * @dest: string added to
+ * @src: appending string
+ * Return: pointer
+ */
 
-// Function to concatenate two strings
-char* _strcat(char* dest, const char* src) {
+char * _strcat(char* dest, const char* src) 
+{
     char* result = dest; // Store the starting address of dest
 
     // Move the pointer to the end of dest
