@@ -6,25 +6,24 @@
  * @n: cat second string
  * Return: cat string
  */
-char *_strncat(char *dest, char *src, int n)
+char *_strncat(char *dest, const char *src, int n)
 {
-	char* result = dest;
+    char *result = dest;
 
-	 while (*dest != '\0')
-	 {
-		 dest++;
-	 }
-	 
-	 while (*src != '\0' && n > 0)
-	 {
-		 *dest = *src;
-		 dest++;
-		 src++;
-		 n--;
-	 }
+    while (*dest != '\0')
+    {
+        dest++;
+    }
 
-	 *dest = '\0';
+    while (*src != '\0' && n > 0)
+    {
+        *dest = *src;
+        dest++;
+        src++;
+        n--;
+    }
 
-	 return result;
+    *dest = '\0';
 
+    return result;
 }
