@@ -6,11 +6,11 @@
  */
 char *leet(char *str) 
 {
+int i;
 
-    for (int i = 0; str[i] != '\0'; i++) 
-    {
-
-        if (str[i] == 'a') str[i] = '4';
+  for (i = 0; str[i] != '\0'; i++)
+  {
+	if (str[i] == 'a') str[i] = '4';
         else if (str[i] == 'e') str[i] = '3';
         else if (str[i] == 'o') str[i] = '0';
         else if (str[i] == 't') str[i] = '7';
