@@ -6,9 +6,10 @@
  * @n: cat second string
  * Return: cat string
  */
+
 char *_strncat(char *dest, const char *src, int n)
 {
-    char *result = dest;
+    char* result = dest;
 
     while (*dest != '\0')
     {
