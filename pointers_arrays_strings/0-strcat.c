@@ -6,40 +6,21 @@
  * Return: pointer
  */
 
-char * _strcat(char* dest, const char* src) 
+char *_strcat(char *dest, char *src)
 {
-    char* result = dest; // Store the starting address of dest
+    int i = 0, j = 0;
 
-    // Move the pointer to the end of dest
-    while (*dest != '\0') {
-        dest++;
+    while (dest[i] != '\0')
+    {
+        i++;
     }
 
-    // Append characters from src to dest
-    while (*src != '\0') {
-        *dest = *src;
-        dest++;
-        src++;
+    while (src[j] != '\0')
+    {
+        dest[i] = src[j];
+        i++;
+        j++;
     }
 
-    // Add a terminating null byte
-    *dest = '\0';
-
-    return result; // Return the modified dest
-}
-
-int main() {
-    char dest[100] = "Hello, ";
-    const char* src = "world!";
-
-    _strcat(dest, src);
-
-    // Print the concatenated string
-    char* concatenated = dest;
-    while (*concatenated != '\0') {
-        putchar(*concatenated);
-        concatenated++;
-    }
-
-    return 0;
-}
+    dest[i] = '\0';
+    return (dest);
