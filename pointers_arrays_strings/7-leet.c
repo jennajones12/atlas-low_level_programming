@@ -4,27 +4,25 @@
  * @str: input string
  * Return: String that is encoded
  */
-char* leet(char* str) {
-char *result = str;
+char *leet(char *n)
+{
+	char leetMap[] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
+	char leetReplace[] = {'4', '4', '3', '3', '0', '0', '7', '7', '1', '1'};
 
-    if (str == NULL) {
-    return NULL;
-    }
-
-    while (*str) {
-        if (*str == 'a' || *str == 'A') {
-            *str = '4';
-        } else if (*str == 'e' || *str == 'E') {
-            *str = '3';
-        } else if (*str == 'o' || *str == 'O') {
-            *str = '0';
-        } else if (*str == 't' || *str == 'T') {
-            *str = '7';
-        } else if (*str == 'l' || *str == 'L') {
-            *str = '1';
-        }
-        str++;
-    }
-
-    return (result);
+	int i = 0;
+	while (n[i] != '\0')
+	{
+		int j = 0;
+		while (j < 10)
+		{
+			if (n[i] == leetMap[j])
+			{
+				 n[i] = leetReplace[j];
+				 break;
+			}
+			j++;
+		}
+		i++;
+	}
+	return n;
 }
