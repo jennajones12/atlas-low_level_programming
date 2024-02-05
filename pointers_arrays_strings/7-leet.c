@@ -5,9 +5,10 @@
  * Return: String that is encoded
  */
 char *leet(char *n)
+{
 char leetMap[] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
 char leetReplace[] = {'4', '4', '3', '3', '0', '0', '7', '7', '1', '1'};
-{
+
 int i = 0;
 
 while (n[i] != '\0')
