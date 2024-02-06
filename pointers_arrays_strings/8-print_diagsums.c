@@ -9,7 +9,16 @@
  * @a: points to first element of matrix
  * Return: none
  */
-void print_diagsums(int *a);
+
+void print_diagsums(int *a, int size)
+{
+	int sum_diag1 = a[0] + a[size + 1] + a[size * 2];
+	int sum_diag2 = a[size - 1] + a[size + 1] + a[size * 2 - 2];
+
+	printf("Sum of primary diagonal: %d\n", sum_diag1);
+	printf("Sum of secondary diagonal: %d\n", sum_diag2);
+}
+
 int main()
 {
 	int matrix[3][3];
@@ -35,13 +44,4 @@ int main()
 	print_diagsums((int *)matrix, 3);
 
 	return (0);
-}
-
-void print_diagsums(int *a)
-{
-	int sum_diag1 = a[0] + a[4] + a[8];
-	int sum_diag2 = a[2] + a[4] + a[6];
-
-	printf("Sum of primary diagonal: %d\n", sum_diag1);
-	printf("Sum of secondary diagonal: %d\n", sum_diag2);
 }
