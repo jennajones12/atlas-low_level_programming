@@ -17,11 +17,9 @@ void print_diagsums(int *a, int size)
 
 	printf("Sum of primary diagonal: %d\n", sum_diag1);
 	printf("Sum of secondary diagonal: %d\n", sum_diag2);
-}
-
-int main()
 {
 	int matrix[3][3];
+}
 
 	srand(time(NULL));
 	
@@ -34,6 +32,7 @@ int main()
 	matrix[2][0] = rand() % 100 + 1;
 	matrix[2][1] = rand() % 100 + 1;
 	matrix[2][2] = rand() % 100 + 1;
+{
 
 	printf("Matrix:\n");
 	printf("%d\t%d\t%d\n", matrix[0][0], matrix[0][1], matrix[0][2]);
@@ -44,4 +43,5 @@ int main()
 	print_diagsums((int *)matrix, 3);
 
 	return (0);
+}
 }
