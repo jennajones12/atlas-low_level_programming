@@ -6,10 +6,10 @@
  *
  * Return: The absolute value of the integer.
  */
-int _abs(int num)
+int _abs(int n)
 {
-	if (num < 0)
-		return -num;
+	if (n < 0)
+		return (-n);
 	else
-		return num;
+		return (n);
 }
