@@ -1,7 +1,9 @@
 #include "main.h"
-/* _puts_recursion - a function that prints a string followed by a \n to the stndrd out
- *@s: pointer to null-terminated sring to be printed
- *return:none
+/*
+ *
+ * _puts_recursion - prints a string followed by new line to the stndrd output
+ * @s - pointer to null-terminated sring to be printed
+ * return - none
  */
 
 void _puts_recursion(char *s)
