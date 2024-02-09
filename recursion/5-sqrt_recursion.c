@@ -4,7 +4,9 @@
  * @n: num to find sq root of
  *
  * Return: natural square root of n or -1 if n doesnt have natural sq root
- */
+u */
+int _start(int (1))
+int _end(int n)
 int _sqrt_recursion(int n)
 {
 	if (n < 0 || (n != 0 && n < 2))
@@ -17,17 +19,15 @@ int _sqrt_recursion(int n)
 }
 else
 {
-int start = 1;
-int end = n;
-int result = -1
+int result = -1;
 while (start <= end)
 {
 	int mid = (start + end) / 2;
-	iif (mid * mid == n)
+	if [(mid * mid == n)]
 {
 	return (mid);
 }
-else if (mid * mid < n)
+if (mid * mid < n)
 {
 	start = mid + 1;
 	result = mid;
