@@ -11,7 +11,9 @@ int _sqrt_recursion(int n)
 {
 	return (n);
 }
-int start = 1, end = n / 2, result = -1;
+int start = 1 
+int end = n / 2
+int result = -1;
 
 while (start <= end)
 {
