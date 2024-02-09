@@ -5,7 +5,7 @@
  *
  * Return: natural square root of n or -1 if n doesnt have natural sq root
 u */
-int _start(int)
+int _start(int, 1)
 int _end(int n)
 int _sqrt_recursion(int n)
 {
