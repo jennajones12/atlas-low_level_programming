@@ -9,6 +9,7 @@
  */
 int is_prime_number(int n)
 {
+
 	if (n <= 1)
 		return (0);
 
@@ -18,12 +19,13 @@ int is_prime_number(int n)
 	if (n % 2 == 0)
 		return (0);
 
-	int i = 3;
-	while (i * i <= n)
+	int r = 3;
+
+	while (r * r <= n)
 	{
-		if (n % i == 0)
+		if (n % r == 0)
 			return (0);
-		i+= 2;
+		r+= 2;
 	}
 	
 	return (1);
