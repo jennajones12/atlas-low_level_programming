@@ -3,8 +3,8 @@
 /**
  * main - prints all arguments receieved
  * @argc: arugment counter
- * argv: argument values
- * return: always 0 (success)
+ * @argv: argument values
+ * Return: Always 0 (Success)
  */
 int main(int argc, char *argv[])
 {
