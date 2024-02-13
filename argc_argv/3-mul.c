@@ -1,13 +1,14 @@
 #include "main.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 /*
  * main - prints all arguments received
  * @argc: argument count
  * @argv: argument value
- * Return: 0 (Success), 1 if Error
+ *
+ * Return: 0 on success, 1 if the program does not receive two arguments
  */
-
 int atoi(const char *str);
 int main(int argc, char *argv[])
 {
