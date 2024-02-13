@@ -5,12 +5,11 @@
  * main - prints number of arguments passed into it
  * @argc: number of arugments passed
  * @argv: value of arguments passed
- * return: always 0, on success
+ * Return: always 0 (success)
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	(void)argv;
-	if (argc >= 1)
+	if (argv[0])
 		printf("%d\n", argc - 1);
 	return (0);
 }
