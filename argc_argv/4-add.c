@@ -6,35 +6,25 @@
  * main - program that adds positive numbers
  * @argc: counter for arguments
  * @argv: value for arguments
- * Return: 0 on success, 1 on error.
+ * Return: 0 on success
  */
-
-int atoi(const char *str);
 int main(int argc, char **argv)
 {
-	int result = 0;
+	int num, result = 0, i;
 
-	if (argc < 2)
+	while (argc-- > 1)
 	{
-		printf("Error: No input\n");
-		return (1);
-	}
-
-	while (*++argv)
-	{
-		char *ptr = *argv;
-		while (*ptr)
+		for (i = 0; argv[argc][i]; i++)
 		{
-			if (!isdigit(*ptr))
+			if (!(isdigit(argv[argc][i])))
 			{
-				printf("Error: Invalid input\n");
+				printf("Error\n");
 				return (1);
 			}
-			ptr++;
 		}
-		result += atoi(*argv);
+		num = atoi(argv[argc]);
+		result += num;
 	}
-	
 	printf("%d\n", result);
 	return (0);
 }
