@@ -29,14 +29,15 @@ char *_strdup(char *str)
 
 	if (new_str == NULL)
 	{
-
-    for (i = 0; i < len; i++) 
+		return (NULL);
+	}
+	else
+	{
+		for (i = 0; i < len; i++)
     {
         new_str[i] = str[i];
     }
     new_str[len] = '\0';
     return (start);
 	}
-	else
-		return (NULL);
 }
