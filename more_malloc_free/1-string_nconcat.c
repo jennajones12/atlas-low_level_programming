@@ -25,7 +25,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	while (s2[lens2])
 		lens2++;
-	
+
 	if (n >= lens2)
 		n = lens2;
 
