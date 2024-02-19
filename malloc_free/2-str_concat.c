@@ -3,9 +3,14 @@
 #include <stdlib.h>
 
 /**
+ * str_concat - Concatenates two strings.
+ * @s1: first string
+ * @s2: second string
  *
- *
+ * Return: pointer to newly allocated space in mem containing the
+ * concatenated strings, NULL if mem allocation fails.
  */
+
 char *str_concat(char *s1, char *s2)
 {
 	char *new_str, *starts1, *starts2;
