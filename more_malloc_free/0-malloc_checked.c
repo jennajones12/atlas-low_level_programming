@@ -6,7 +6,6 @@
 /**
  * malloc_checked - function that allocates memory using malloc
  * @b: unsigned input integer
- * 
  * Return: pointer to allocated memory or NULL if it fails
  */
 
