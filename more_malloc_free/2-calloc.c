@@ -4,8 +4,10 @@
 #include <stdio.h>
 
 /*
- *
- *
+ * _calloc - function that allocates mem for an array using malloc
+ * @nmemb: nuymber of memory spaces
+ * @size: size of nmemb
+ * Return: returns pointer to allocated space, NULL on failure
  */
 void *_calloc(unsigned int nmemb, unsigned int size);
 
