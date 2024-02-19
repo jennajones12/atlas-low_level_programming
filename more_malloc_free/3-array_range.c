@@ -9,9 +9,6 @@
  * @max: max number to start
  * Return: pointer
  */
-int *array_range(int min, int max);
-void fill_array(int *arr, int min, int max);
-
 int *array_range(int min, int max)
 {
 	int *new_array;
