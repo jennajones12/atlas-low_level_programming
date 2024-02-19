@@ -3,11 +3,13 @@
 #include <stdlib.h>
 
 /**
- * alloc_grid - allocates mem for 2D array of ints and initializes each element to 0.
+ * alloc_grid - allocates mem for 2D array of ints and
+ * initializes each element to 0.
  * @width: width of the 2D array
  * @height: height of the 2D array
  *
- * Return: pointer to newly allocated 2D array, NULL if width or height is 0 or neg
+ * Return: pointer to newly allocated 2D array,
+ * NULL if width or height is 0 or neg
  * or if memory allocation fails.
  */
 
