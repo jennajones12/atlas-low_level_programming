@@ -6,28 +6,26 @@
  * @name: dog's name
  * @age: dog's age
  * @owner: dog's owner
- * Return: none
+ * Return: pointer to new dog structure
  */
-
 dog_t *new_dog(char *name, float age, char *owner)
 {
+	dog_t *new_dog;
+	char *cpyname, *cpyowner;
+	int name_len = 0, int owner_len = 0
+
 	if (name == NULL || owner == NULL)
 		return NULL;
 
-	int name_len = 0;
-	while (name[name_len] != '\0')
+	while (name[name_len])
 		name_len++;
-
-	int owner_len = 0;
-	while (owner[owner_len] != '\0')
+	while (owner[owner_len])
 		owner_len++;
 
-	dog_t *new_dog = (dog_t *)malloc(sizeof(dog_t));
-	if (newDog == NULL)
-	{
+	new_dog = malloc(sizeof(dog_t));
+	if (new_dog == NULL)
 		return (NULL);
-	}
-
+	
 	new_dog->name = (char *)malloc((name_len + 1) * sizeof(char));
 	 if (new_dog->name == NULL)
 	 {
@@ -43,24 +41,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	 }
 
 	 char *cpyname = new_dog->name;
+	 new_dog-> = age;
 	 char *cpyowner = new_dog->owner;
-	 while (*name != '\0')
-	 {
-		 *cpyname = *name;
-		 cpyname++;
-		 name++;
-	 }
-	 *cpyname = '\0';
-
-	 while (*owner != '\0')
-	 {
-		 *cpyowner = *owner;
-		 cpyowner++;
-		 owner++;
-	 }
-	 *cpyowner = '/0';
-
-	 new_dog->age = age;
-
 	 return (new_dog);
 }
