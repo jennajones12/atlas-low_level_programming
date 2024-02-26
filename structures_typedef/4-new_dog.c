@@ -8,56 +8,59 @@
  * @owner: dog's owner
  * Return: none
  */
-int string_length(const char *str)
-{
-	int len = 0;
-	while (str[len] != '\0')
-{
-	len++;
-}
-return (len);
-}
-
-void string_copy(char *dest, const char *src)
-{
-	while (*src != '\0')
-	{
-		*dest = *src;
-		dest++;
-		src++;
-	}
-	*dest = '\0';
-}
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
+	if (name == NULL || owner == NULL)
+		return NULL;
+
+	int name_len = 0;
+	while (name[name_len] != '\0')
+		name_len++;
+
+	int owner_len = 0;
+	while (owner[owner_len] != '\0')
+		owner_len++;
+
 	dog_t *new_dog = (dog_t *)malloc(sizeof(dog_t));
-	if (new_dog == NULL)
+	if (newDog == NULL)
 	{
 		return (NULL);
 	}
 
-	int nameLen = string_length(name);
-	int ownerLen = string_length(owner);
+	new_dog->name = (char *)malloc((name_len + 1) * sizeof(char));
+	 if (new_dog->name == NULL)
+	 {
+		 free(new_dog);
+		 return (NULL);
+	 }
+	 new_dog->owner = (char *)malloc((owner_len + 1) * sizeof(char));
+	 if (new_dog->owner == NULL)
+	 {
+		 free(new_dog->name);
+		 free(new_dog);
+		 return (NULL);
+	 }
 
-	new_dog->name = (char *)malloc(nameLen + 1);
-	if (new_dog->name == NULL)
-	{
-		free(new_dog);
-		return (NULL);
-	}
-	string_copy(new_dog->name, name);
-	
-	new_dog->owner = (char *)malloc(ownerLen + 1);
-	if (new_dog->owner == NULL)
-	{
-		free(new_dog->name);
-		free(new_dog);
-		return (NULL);
-	}
-	string_copy(newDog->owner, owner);
+	 char *cpyname = new_dog->name;
+	 char *cpyowner = new_dog->owner;
+	 while (*name != '\0')
+	 {
+		 *cpyname = *name;
+		 cpyname++;
+		 name++;
+	 }
+	 *cpyname = '\0';
 
-	new_dog->age = age;
+	 while (*owner != '\0')
+	 {
+		 *cpyowner = *owner;
+		 cpyowner++;
+		 owner++;
+	 }
+	 *cpyowner = '/0';
 
-	return (new_dog);
+	 new_dog->age = age;
+
+	 return (new_dog);
 }
