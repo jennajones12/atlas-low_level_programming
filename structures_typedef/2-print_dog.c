@@ -1,11 +1,8 @@
 #include <stdio.h>
 #include "dog.h"
 /**
- * print_dog: function that prints a struct dog
+ * print_dog - function that prints a struct dog
  * @d: struct to initialize
- * @name: dog's name
- * @age: dog's age
- * @owner: dog's owner
  * Return: none
  */
 void print_dog(struct dog *d)
