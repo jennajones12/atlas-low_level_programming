@@ -25,7 +25,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 
 	cpyname = malloc(len_name + 1);
-	if (cpyname == NULL) 
+	if (cpyname == NULL)
 	{
 		free(new_dog);
 		return (NULL);
@@ -35,7 +35,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	cpyname[i] = '\0';
 
 	cpyowner = malloc(len_owner + 1);
-	if (cpyowner == NULL) 
+	if (cpyowner == NULL)
 	{
 		free(cpyname);
 		free(new_dog);
