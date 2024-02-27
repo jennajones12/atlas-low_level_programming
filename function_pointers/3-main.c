@@ -9,23 +9,31 @@
  * @argv: array of arguments
  * Return: exits 0 normally, 98 on argc error, 99 on illegal operator
  */
+int (*get_op_func(char *s))(int, int);
+
 int main(int argc, char *argv[])
 {
-	int (*func)(int, int);
+    int a, b, result;
+    int (*func)(int, int);
 
-	if (argc != 4)
-	{
-		printf("Error\n");
-		exit(98);
-	}
+    if (argc != 4)
+    {
+        printf("Usage: %s num1 operator num2\n", argv[0]);
+        return 1;
+    }
 
-	func = get_op_func(argv[2]);
-	if (func == NULL)
-	{
-		printf("Error\n");
-		exit(99);
-	}
+    a = atoi(argv[1]);
+    b = atoi(argv[3]);
+    func = get_op_func(argv[2]);
 
-	printf("%d\n", func(atoi(argv[1]), atoi(argv[3])));
-	return (0);
+    if (!func)
+    {
+        printf("Error: Operator not recognized\n");
+        return 1;
+    }
+
+    result = func(a, b);
+    printf("%d\n", result);
+
+    return 0;
 }
