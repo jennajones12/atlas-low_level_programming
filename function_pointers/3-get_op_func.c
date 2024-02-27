@@ -11,28 +11,23 @@
 int (*get_op_func(char *s))(int, int)
 {
 	int i = 0;
+	op_t ops[] = {
+		{"+", op_add},
+		{"-", op_sub},
+		{"*", op_mul},
+		{"/", op_div},
+		{"%", op_mod},
+		{NULL, NULL}
 
-	while (*(s + i))
+	};
+
+	while (i < 5)
 	{
+		if (s[0] == ops[i].op[0])
+		{
+			return (ops[i].f);
+		}
 		i++;
 	}
-
-	if (i != 1)
-		return (NULL);
-
-	/* An array of function pointers corresponding to each operator */
-	int (*ops[5])(int, int) = {op_add, op_sub, op_mul, op_div, op_mod};
-
-	/* An array of characters representing the valid operators */
-	 char ops_chars[] = {'+', '-', '*', '/', '%'};
-
-	 i = 0;
-	 while (i < 5)
-	 {
-		 if (*s == ops_chars[i])
-			 return (ops[i]);
-		 i++;
-	 }
-	 
-	 return (NULL);
+	return (NULL);
 }
