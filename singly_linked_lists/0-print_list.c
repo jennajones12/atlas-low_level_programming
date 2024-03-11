@@ -7,23 +7,17 @@
 */
 size_t print_list(const list_t *h)
 {
-	const list_t *current = h;
-	size_t count = 0;
+	unsigned int nodes = 0;
 
-	while (current != NULL)
+	while (h)
 	{
-		const char *str = current->str;
-		size_t length = 0;
-		while (str && *str != '\0')
-		{
-			length++;
-			str++;
-		}
-		printf("[%lu] %s\n", (unsigned long)length, current->str != NULL ? current->str : "(nil)");
-		count++;
-		current = current->next;
+		printf("[%u] ", h->len);
+		if (h->str == NULL)
+			printf("(nil)\n");
+		else
+			printf("%s\n", h->str);
+		h = h->next;
+		nodes++;
 	}
-
-	printf("-> %lu element%s\n", (unsigned long)count, count != 1 ? "s" : "");
-	return (count);
+	return (nodes);
 }
