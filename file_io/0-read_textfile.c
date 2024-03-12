@@ -1,4 +1,5 @@
-#include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
 #include <stdlib.h>
 #include "main.h"
 
@@ -8,34 +9,38 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	FILE *file;
-	char *buffer;
-	size_t bytes_read;
-	ssize_t result = 0;
+	int fdo, fdw;
+	char *temp;
+	ssize_t bytes_read;
+	size_t total_bytes_read = 0;
 
 	if (filename == NULL)
 		return (0);
 
-	file = fopen(filename, "r");
-	if (file == NULL)
+	temp = (char *)malloc(letters * sizeof(char));
+	if (temp == NULL)
 		return (0);
 
-	buffer = (char *)malloc((letters + 1) * sizeof(char));
-	if (buffer == NULL)
+	fdo = open(filename, O_RDONLY);
+	if (fdo < 0)
 	{
-		fclose(file);
+		free(temp);
 		return (0);
 	}
 
-	bytes_read = fread(buffer, sizeof(char), letters, file);
-	if (bytes_read > 0)
+	while ((bytes_read = read(fdo, temp + total_bytes_read, letters - total_bytes_read)) > 0)
 	{
-		buffer[bytes_read] = '\0';
-		if (fwrite(buffer, sizeof(char), bytes_read, stdout) == bytes_read)
-			result = bytes_read;
+		total_bytes_read += bytes_read;
+		 if (total_bytes_read >= letters)
+			 break;
 	}
 
-	fclose(file);
-	free(buffer);
-	return (result);
+	fdw = write(STDOUT_FILENO, temp, total_bytes_read);
+	free(temp);
+	close(fdo);
+
+	if (fdw == -1 || (size_t)fdw != total_bytes_read)
+		return (0);
+
+	return (fdw);
 }
