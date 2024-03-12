@@ -20,7 +20,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m);
 unsigned int countSetBits(unsigned long int n);
 
 /**
- * flip_bits - Count the number of bits needed to flip to get from one number to another
+ * flip_bits - Counts number of bits to flip from one number to another
  * @n: First number
  * @m: Second number
  *
