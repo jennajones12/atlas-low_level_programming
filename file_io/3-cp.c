@@ -13,8 +13,6 @@
  * Return: 0 on success, or the appropriate error code on failure
  */
 
-int safe_close(int description);
-
 int main(int argc, char *argv[])
 {
 	char buffer[BUFFER_SIZE];
