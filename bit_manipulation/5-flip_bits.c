@@ -10,7 +10,22 @@
 
 unsigned int flip_bits(unsigned long int n, unsigned long int m);
 
+/**
+ * countSetBits - Count the number of set bits in a number
+ * @n: The number to count set bits in
+ *
+ * Return: Number of set bits
+ */
+
 unsigned int countSetBits(unsigned long int n);
+
+/**
+ * flip_bits - Count the number of bits needed to flip to get from one number to another
+ * @n: First number
+ * @m: Second number
+ *
+ * Return: Number of bits needed to flip
+ */
 
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
@@ -18,6 +33,13 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 
 	return (countSetBits(xor_result));
 }
+
+/**
+ * countSetBits - Count the number of set bits in a number
+ * @n: The number to count set bits in
+ *
+ * Return: Number of set bits
+ */
 
 unsigned int countSetBits(unsigned long int n)
 {
