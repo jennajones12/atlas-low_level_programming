@@ -6,6 +6,8 @@
 
 #define BUFFER_SIZE 1024
 
+int safe_close(int);
+
 /**
  * main - Entry point for the cp program
  * @argc: The number of arguments passed to the program
