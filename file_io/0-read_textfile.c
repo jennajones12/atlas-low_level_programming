@@ -4,7 +4,11 @@
 #include "main.h"
 
 /**
- *
+ * read_textfile - Reads a text file and prints it to the POSIX standard output
+ * @filename: The name of the file to read
+ * @letters: The number of letters to read and print
+ * Return: If successful, the number of letters read and printed
+ * otherwise 0
  */
 
 ssize_t read_textfile(const char *filename, size_t letters)
@@ -17,7 +21,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (filename == NULL)
 		return (0);
 
-	temp = (char *)malloc(letters * sizeof(char));
+	temp = malloc(letters * sizeof(char));
 	if (temp == NULL)
 		return (0);
 
@@ -31,8 +35,15 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	while ((bytes_read = read(fdo, temp + total_bytes_read, letters - total_bytes_read)) > 0)
 	{
 		total_bytes_read += bytes_read;
-		 if (total_bytes_read >= letters)
-			 break;
+		if (total_bytes_read >= letters)
+			break;
+	}
+
+	if (bytes_read == -1)
+	{
+		free(temp);
+		close(fdo);
+		return (0);
 	}
 
 	fdw = write(STDOUT_FILENO, temp, total_bytes_read);
