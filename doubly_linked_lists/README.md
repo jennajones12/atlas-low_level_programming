@@ -1,104 +1,110 @@
 0x17. C - Doubly linked lists
 
-This directory contains C code for manipulating doubly linked lists (dlistint_t). The provided functions adhere to the Betty style guidelines and compile with gcc using the -Wall -pedantic -Werror -Wextra -std=gnu89 flags.
+This directory contains a set of functions to handle operations on doubly linked lists (dlistint_t) in C. The provided functions adhere to the Betty style guidelines and compile with gcc using the -Wall -pedantic -Werror -Wextra -std=gnu89 flags. 
+
+This README provides detailed information on each function along with usage examples to help understand and utilize doubly linked list functions effectively.
 
 FUNCTIONS
 
-1. 'delete_dnodeint_at_index'
+0. Print list
 
-	This function deletes the node at a specified index in doubly linked list.
+	Purpose: Prints all the elements of a doubly linked list.
+
+	Prototype: 'size_t print_dlistint(const dlistint_t *h);'
+
+	Example Usage:
+
+		size_t nodes_printed = print_dlistint(head);
+
+1. List length
+
+	Purpose: Returns the number of elements in a doubly linked list.
+
+ 	Prototype: 'size_t dlistint_len(const dlistint_t *h);'
+
+	Example Usage:
+
+		size_t list_length = dlistint_len(head);
+
+2. Add node
+
+	Purpose: Adds a new node at the beginning of a doubly linked list.
+
+	Prototype: 'dlistint_t *add_dnodeint(dlistint_t **head, const int n);'
+
+	Example Usage:
+
+		dlistint_t *new_node = add_dnodeint(&head, 10);
+
+3.  Add node at the end
+
+	Purpose: Adds a new node at the end of a doubly linked list.
+
+	Prototype: 'dlistint_t *add_dnodeint_end(dlistint_t **head, const int n);'
+
+	Example Usage:
+
+		dlistint_t *new_node = add_dnodeint_end(&head, 20);
+
+4. Free list
+
+ 	Purpose: Frees a doubly linked list.
+
+	Prototype: 'void free_dlistint(dlistint_t *head);'
+
+	Example Usage:
+
+		free_dlistint(head);
+
+5. Get node at index
+
+	Purpose: Returns the nth node of a doubly linked list.
 	
-Prototype:
-      
-      int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
+ 	Prototype: 'dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index);'
+
+	Example Usage:
+
+		dlistint_t *node = get_dnodeint_at_index(head, 2);
+
+6. Sum list
+
+	Purpose: Computes the sum of all the data (n) of a doubly linked list.
+
+	Prototype: 'int sum_dlistint(dlistint_t *head);'
+
+	Example Usage:
+
+		int sum = sum_dlistint(head);
+
+7. Insert at index
+
+	Purpose: Inserts a new node at a given position.
+
+	Prototype: 'dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n);'
+
+	Example Usage:
+
+		dlistint_t *new_node = insert_dnodeint_at_index(&head, 2, 30);
+
+8. Delete at index
+
+	Purpose: Deletes the node at index index of a doubly linked list.
+
+	Prototype: 'int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);'
+
+	Example Usage:
+
+		int success = delete_dnodeint_at_index(&head, 3);
 
 
-Parameters: 
- 
-'head': Double pointer to the head of the doubly linked list.
+COMPILATION
 
-'index': Index of the node to delete. Indexing starts from 0.
+To compile code using these functions, include the relevant header file (lists.h) and use the following command:
+	
+	gcc -o your_program your_program.c linked_list_functions.c -Wall -Werror -Wextra -pedantic -std=gnu89
 
+Replace 'your_program' with the name of program file.
 
-Return Value:
+NOTE
 
-'1' if deletion is successful.
-
-'-1' if deletion fails (e.g., invalid index or empty list).
-     
-
-Usage Example:
-
-    dlistint_t *head = NULL;
-    add_dnodeint_end(&head, 1);
-    add_dnodeint_end(&head, 2);
-    add_dnodeint_end(&head, 3);
-
-    delete_dnodeint_at_index(&head, 1); // Deletes node at index 1
-
-
-2. 'add_dnodeint_end'
-
-	This function adds a new node at the end of a doubly linked list.
-
-
-Prototype:
-
- 	dlistint_t *add_dnodeint_end(dlistint_t **head, const int n);
-
-
-Parameters:
-
-'head': Double pointer to the head of the doubly linked list.
-
-'n': Integer value to be stored in the new node.
-
-
-Return Value:
-
-Pointer to the newly added node.
-
-
-Usage Example:
-
-	dlistint_t *head = NULL;
-	add_dnodeint_end(&head, 1); // Adds a node with value 1 to the end
-
-
-3. 'print_dlistint'
-
-	This function prints all elements of a doubly linked list.
-
-
-Prototype:
-
-	size_t print_dlistint(const dlistint_t *h);
-
-
-Parameters:
-
-'h': Pointer to the head of the doubly linked list.
-
-
-Return Value:
-
-Number of nodes in the list.
-
-
-Usage Example:
-
-	dlistint_t *head = NULL;
-	add_dnodeint_end(&head, 1);
-	add_dnodeint_end(&head, 2);
-	add_dnodeint_end(&head, 3);
-
-	print_dlistint(head); // Prints: 1 2 3
-
-
-COMPLILATION
-
-To compile the code, use the following command:
-
-	gcc -Wall -pedantic -Werror -Wextra -std=gnu89 *.c -o executable_name
-
-Replace executable_name with your desired name for the executable file.
+Handle edge cases and memory management appropriately within code.
