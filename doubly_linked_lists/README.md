@@ -1,6 +1,6 @@
-README
+0x17. C - Doubly linked lists
 
-This repository contains C code for manipulating doubly linked lists (dlistint_t). The provided functions adhere to the Betty style guidelines and compile with gcc using the -Wall -pedantic -Werror -Wextra -std=gnu89 flags.
+This directory contains C code for manipulating doubly linked lists (dlistint_t). The provided functions adhere to the Betty style guidelines and compile with gcc using the -Wall -pedantic -Werror -Wextra -std=gnu89 flags.
 
 FUNCTIONS
 
