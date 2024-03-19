@@ -2,6 +2,7 @@
 
 This directory contains an implementation of a hash table in C, along with functions to create, manipulate, and delete hash tables. The provided functions adhere to the Betty style guidelines and compile with gcc using the -Wall -pedantic -Werror -Wextra -std=gnu89 flags.
 
+This README provides detailed information on each function along with usage examples to help understand and utilize hash table functions effectively.
 
 FUNCTIONS
 
