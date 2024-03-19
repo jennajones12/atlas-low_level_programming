@@ -4,4 +4,29 @@ This repository contains C code for manipulating doubly linked lists (dlistint_t
 
 FUNCTIONS
 
-1. delete_dnodeint_at_index: This function deletes the node at a specified index in a doubly linked list.
+1. delete_dnodeint_at_index: This function deletes the node at a specified index in doubly linked list.
+	
+Prototype
+      
+      int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
+
+Parameters 
+ 
+'head': Double pointer to the head of the doubly linked list.
+
+'index': Index of the node to delete. Indexing starts from 0.
+
+Return Value
+
+'1' if deletion is successful.
+
+'-1' if deletion fails (e.g., invalid index or empty list).
+     
+Usage Example
+
+    dlistint_t *head = NULL;
+    add_dnodeint_end(&head, 1);
+    add_dnodeint_end(&head, 2);
+    add_dnodeint_end(&head, 3);
+
+    delete_dnodeint_at_index(&head, 1); // Deletes node at index 1
