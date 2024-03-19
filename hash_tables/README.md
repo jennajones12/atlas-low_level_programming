@@ -5,7 +5,7 @@ This directory contains an implementation of a hash table in C, along with funct
 
 FUNCTIONS
 
-0. >>> ht = {}
+1. 'hash_table_create'
 
    Purpose: Creates a hash table with a specified size.
 
@@ -15,7 +15,7 @@ FUNCTIONS
 
        hash_table_t *ht = hash_table_create(1024);
 
-1. key -> index
+2. 'key_index'
 
    Purpose: Computes the index of a key in the hash table.
 
@@ -25,7 +25,7 @@ FUNCTIONS
 
            unsigned long int index = key_index((const unsigned char *)"example_key", ht->size);
 
-2. >>> ht['betty'] = 'cool'
+3. 'hash_table_set'
 
    Purpose: Adds or updates an element in the hash table.
 
@@ -35,7 +35,7 @@ FUNCTIONS
 
        hash_table_set(ht, "key1", "value1");
 
-3. >>> ht['betty']
+4. 'hash_table_get'
 
    Purpose: Retrieves the value associated with a given key from the hash table.
 
@@ -45,7 +45,7 @@ FUNCTIONS
 
        char *value = hash_table_get(ht, "key1");
 
-4. >>> print(ht)
+5. 'hash_table_print'
 
    Purpose: Prints the key/value pairs stored in the hash table.
 
@@ -55,7 +55,7 @@ FUNCTIONS
 
        hash_table_print(ht);
 
-5. >>> del ht
+6. 'hash_table_delete'
 
    Purpose: Deletes a hash table along with all its elements.
 
@@ -70,7 +70,7 @@ COMPILATION
 
     gcc -o your_program your_program.c hash_tables.c -Wall -Werror -Wextra -pedantic -std=gnu89
 
-Replace 'your_program' with the name of your program file.
+Replace 'your_program' with the name of program file.
 
 
 NOTE
