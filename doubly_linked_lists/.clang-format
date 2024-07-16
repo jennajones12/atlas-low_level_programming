@@ -1,0 +1,8 @@
+BasedOnStyle: Google
+IndentWidth: 8
+UseTab: Always
+TabWidth: 8
+AllowShortFunctionsOnASingleLine: None
+BreakBeforeBraces: Linux
+ColumnLimit: 80
+
